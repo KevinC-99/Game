@@ -50,6 +50,19 @@ def drawDiceBorder():
         turtle.forward(100)
         turtle.left(90)
 
+def drawTwoDots():
+    turtle.penup()
+    turtle.forward(30)
+    turtle.left(90)
+    turtle.forward(15)
+    turtle.pendown()
+    turtle.right(90)
+    drawCircle()
+    turtle.penup()
+    turtle.forward(40)
+    turtle.pendown()
+    drawCircle()
+
 def drawCircle():
     turtle.begin_fill()
     turtle.circle(15)
@@ -66,13 +79,33 @@ def diceRollOne():
     drawCircle()
     turtle.Screen().exitonclick()
 
-
 def diceRollTwo():
+    drawDiceBorder()
+    turtle.left(90)
+    turtle.forward(20)
+    turtle.right(90)
+    drawTwoDots()
+    turtle.Screen().exitonclick()
+
+def diceRollThree():
+    drawDiceBorder()
+    drawTwoDots()
+    turtle.penup()
+    turtle.left(180)
+    turtle.forward(20)
+    turtle.right(90)
+    turtle.forward(40)
+    turtle.right(90)
+    turtle.pendown()
+    drawCircle()
+    turtle.Screen().exitonclick()
+
+def diceRollFour():
     drawDiceBorder()
     turtle.forward(30)
     turtle.penup()
     turtle.left(90)
-    turtle.forward(35)
+    turtle.forward(15)
     turtle.pendown()
     turtle.right(90)
     drawCircle()
@@ -81,3 +114,5 @@ def diceRollTwo():
     turtle.pendown()
     drawCircle()
     turtle.Screen().exitonclick()
+
+diceRollThree()
