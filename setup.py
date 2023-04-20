@@ -22,8 +22,8 @@ def creatingPlayers():
     tempArray.sort()
     return(tempArray)
 
-players = []
-players = creatingPlayers()
+# players = []
+# players = creatingPlayers()
 
 def Order(players):
     
@@ -35,28 +35,49 @@ def Order(players):
 
     return(tempNums)
     
-turns = []
-turns = Order(players)
+# turns = []
+# turns = Order(players)
 
 def drawDice():
 
     turtle.Screen().exitonclick()
 
-def diceRollOne():
+def drawDiceBorder():
     turtle.hideturtle()
     turtle.speed(0)
     for i in range(4):
         turtle.pendown()
         turtle.forward(100)
         turtle.left(90)
+
+def drawCircle():
+    turtle.begin_fill()
+    turtle.circle(15)
+    turtle.end_fill()
+
+def diceRollOne():
+    drawDiceBorder()
     turtle.forward(50)
     turtle.penup()
     turtle.left(90)
-    turtle.forward(20)
+    turtle.forward(35)
     turtle.pendown()
     turtle.right(90)
-    turtle.begin_fill()
-    turtle.circle(30)
-    turtle.end_fill()
+    drawCircle()
+    turtle.Screen().exitonclick()
 
+
+def diceRollTwo():
+    drawDiceBorder()
+    turtle.forward(30)
+    turtle.penup()
+    turtle.left(90)
+    turtle.forward(35)
+    turtle.pendown()
+    turtle.right(90)
+    drawCircle()
+    turtle.penup()
+    turtle.forward(40)
+    turtle.pendown()
+    drawCircle()
     turtle.Screen().exitonclick()
