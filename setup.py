@@ -1,46 +1,46 @@
 import random
 import turtle
 
-# def rollDice():
-#     roll = random.randint(0, 6)
-#     return(roll)
+def rollDice():
+    roll = random.randint(0, 6)
+    return(roll)
 
-# def creatingPlayers():
+def creatingPlayers():
 
-#     tempArray = []
+    tempArray = []
 
-#     while True:
-#         try:
-#             numOfPlayers = int(input("How many people are playing?: "))
-#             break
-#         except ValueError:
-#             print("Please enter a valid number!")
+    while True:
+        try:
+            numOfPlayers = int(input("How many people are playing?: "))
+            break
+        except ValueError:
+            print("Please enter a valid number!")
 
-#     for i in range(numOfPlayers):
-#         name = input("Enter the players name: ")
-#         tempArray.append(name)
-#     tempArray.sort()
-#     return(tempArray)
+    for i in range(numOfPlayers):
+        name = input("Enter the players name: ")
+        tempArray.append(name)
+    tempArray.sort()
+    return(tempArray)
 
-# players = []
-# players = creatingPlayers()
+players = []
+players = creatingPlayers()
 
-# def Order(players):
+def Order(players):
     
-#     tempNums = []
+    tempNums = []
 
-#     for i in range(len(players)):
-#         roll = random.randint(0, 6)
-#         tempNums.append(roll)
+    for i in range(len(players)):
+        roll = random.randint(0, 6)
+        tempNums.append(roll)
 
-#     return(tempNums)
+    return(tempNums)
     
-# turns = []
-# turns = Order(players)
+turns = []
+turns = Order(players)
 
-# def drawDice():
+def drawDice():
 
-#     turtle.Screen().exitonclick()
+    turtle.Screen().exitonclick()
 
 def diceRollOne():
     turtle.hideturtle()
