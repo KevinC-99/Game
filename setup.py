@@ -60,8 +60,3 @@ def diceRollOne():
     turtle.end_fill()
 
     turtle.Screen().exitonclick()
-
-def diceRollTwo():
-
-
-diceRollOne()
