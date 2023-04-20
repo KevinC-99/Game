@@ -1,5 +1,6 @@
 import random
 import turtle
+import time
 
 def rollDice():
     roll = random.randint(0, 6)
@@ -22,25 +23,8 @@ def creatingPlayers():
     tempArray.sort()
     return(tempArray)
 
-# players = []
-# players = creatingPlayers()
-
-def Order(players):
-    
-    tempNums = []
-
-    for i in range(len(players)):
-        roll = random.randint(0, 6)
-        tempNums.append(roll)
-
-    return(tempNums)
-    
-# turns = []
-# turns = Order(players)
-
-def drawDice():
-
-    turtle.Screen().exitonclick()
+players = []
+players = creatingPlayers()
 
 def drawDiceBorder():
     turtle.tracer(0)
@@ -154,3 +138,32 @@ def diceRollSix():
     drawTwoDots()
     turtle.Screen().exitonclick()
 
+def Order(players):
+    
+    tempNums = []
+
+    for i in range(len(players)):
+        roll = random.randint(0, 6)
+        if roll == 1:
+            diceRollOne()
+            tempNums.append(roll)
+        elif roll == 2:
+            diceRollTwo()
+            tempNums.append(roll)
+        elif roll == 3:
+            diceRollThree()
+            tempNums.append(roll)
+        elif roll == 4:
+            diceRollFour()
+            tempNums.append(roll)
+        elif roll == 5:
+            diceRollFive()
+            tempNums.append(roll)
+        elif roll == 6:
+            diceRollSix()
+            tempNums.append(roll)
+
+    return(tempNums)
+    
+turns = []
+turns = Order(players)
