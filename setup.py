@@ -43,6 +43,7 @@ def drawDice():
     turtle.Screen().exitonclick()
 
 def drawDiceBorder():
+    turtle.tracer(0)
     turtle.hideturtle()
     turtle.speed(0)
     for i in range(4):
@@ -65,7 +66,7 @@ def drawTwoDots():
 
 def drawCircle():
     turtle.begin_fill()
-    turtle.circle(15)
+    turtle.circle(10)
     turtle.end_fill()
 
 def diceRollOne():
@@ -73,7 +74,7 @@ def diceRollOne():
     turtle.forward(50)
     turtle.penup()
     turtle.left(90)
-    turtle.forward(35)
+    turtle.forward(40)
     turtle.pendown()
     turtle.right(90)
     drawCircle()
@@ -82,7 +83,7 @@ def diceRollOne():
 def diceRollTwo():
     drawDiceBorder()
     turtle.left(90)
-    turtle.forward(20)
+    turtle.forward(25)
     turtle.right(90)
     drawTwoDots()
     turtle.Screen().exitonclick()
@@ -94,7 +95,7 @@ def diceRollThree():
     turtle.left(180)
     turtle.forward(20)
     turtle.right(90)
-    turtle.forward(40)
+    turtle.forward(50)
     turtle.right(90)
     turtle.pendown()
     drawCircle()
@@ -102,17 +103,54 @@ def diceRollThree():
 
 def diceRollFour():
     drawDiceBorder()
-    turtle.forward(30)
+    drawTwoDots()
     turtle.penup()
+    turtle.forward(30)
     turtle.left(90)
-    turtle.forward(15)
+    turtle.forward(85)
+    turtle.left(90)
+    turtle.pendown()
+    drawTwoDots()
+    turtle.Screen().exitonclick()
+
+def diceRollFive():
+    drawDiceBorder()
+    drawTwoDots()
+    turtle.penup()
+    turtle.forward(30)
+    turtle.left(90)
+    turtle.forward(85)
+    turtle.left(90)
+    turtle.pendown()
+    drawTwoDots()
+    turtle.penup()
+    turtle.forward(30)
+    turtle.left(90)
+    turtle.forward(85)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(40)
     turtle.pendown()
     turtle.right(90)
     drawCircle()
-    turtle.penup()
-    turtle.forward(40)
-    turtle.pendown()
-    drawCircle()
     turtle.Screen().exitonclick()
 
-diceRollThree()
+def diceRollSix():
+    drawDiceBorder()
+    drawTwoDots()
+    turtle.penup()
+    turtle.forward(30)
+    turtle.left(90)
+    turtle.forward(85)
+    turtle.left(90)
+    turtle.pendown()
+    drawTwoDots()
+    turtle.penup()
+    turtle.forward(30)
+    turtle.left(90)
+    turtle.forward(60)
+    turtle.left(90)
+    drawTwoDots()
+    turtle.Screen().exitonclick()
+
