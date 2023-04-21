@@ -150,9 +150,6 @@ def Order(players):
     turtle.goto(-200, 0)
     turtle.pendown()
     for i in range(len(players)):
-        turtle.penup()
-        turtle.pendown()
-        turtle.penup()
         roll = random.randint(1, 6)
         if roll == 1:
             tempNums.append(roll)
