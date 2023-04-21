@@ -49,6 +49,8 @@ def drawTwoDots():
     drawCircle()
 
 def drawCircle():
+    turtle.tracer(1)
+    turtle.speed(0)
     turtle.begin_fill()
     turtle.circle(10)
     turtle.end_fill()
@@ -62,7 +64,6 @@ def diceRollOne():
     turtle.pendown()
     turtle.right(90)
     drawCircle()
-    turtle.Screen().exitonclick()
 
 def diceRollTwo():
     drawDiceBorder()
@@ -70,7 +71,6 @@ def diceRollTwo():
     turtle.forward(25)
     turtle.right(90)
     drawTwoDots()
-    turtle.Screen().exitonclick()
 
 def diceRollThree():
     drawDiceBorder()
@@ -83,7 +83,6 @@ def diceRollThree():
     turtle.right(90)
     turtle.pendown()
     drawCircle()
-    turtle.Screen().exitonclick()
 
 def diceRollFour():
     drawDiceBorder()
@@ -95,7 +94,6 @@ def diceRollFour():
     turtle.left(90)
     turtle.pendown()
     drawTwoDots()
-    turtle.Screen().exitonclick()
 
 def diceRollFive():
     drawDiceBorder()
@@ -118,7 +116,6 @@ def diceRollFive():
     turtle.pendown()
     turtle.right(90)
     drawCircle()
-    turtle.Screen().exitonclick()
 
 def diceRollSix():
     drawDiceBorder()
@@ -136,34 +133,63 @@ def diceRollSix():
     turtle.forward(60)
     turtle.left(90)
     drawTwoDots()
-    turtle.Screen().exitonclick()
 
 def Order(players):
     
+    movement = 0
     tempNums = []
-
+    turtle.setup(width=1080, height=720)
+    turtle.hideturtle()
+    turtle.write("Rolls are done Alphabetically (Names)", align="center", font=("Ariel", 32, "normal"))
+    time.sleep(3)
+    turtle.undo()
+    turtle.write("First Player!", align="center", font=("Ariel", 32, "normal"))
+    time.sleep(3)
+    turtle.undo()
+    turtle.penup()
+    turtle.goto(-200, 0)
+    turtle.pendown()
     for i in range(len(players)):
-        roll = random.randint(0, 6)
+        turtle.penup()
+        turtle.pendown()
+        turtle.penup()
+        roll = random.randint(1, 6)
         if roll == 1:
+            tempNums.append(roll)
             diceRollOne()
-            tempNums.append(roll)
         elif roll == 2:
+            tempNums.append(roll)
             diceRollTwo()
-            tempNums.append(roll)
         elif roll == 3:
+            tempNums.append(roll)
             diceRollThree()
-            tempNums.append(roll)
         elif roll == 4:
+            tempNums.append(roll)
             diceRollFour()
-            tempNums.append(roll)
         elif roll == 5:
+            tempNums.append(roll)
             diceRollFive()
-            tempNums.append(roll)
         elif roll == 6:
-            diceRollSix()
             tempNums.append(roll)
+            diceRollSix()
+        turtle.penup()
+        turtle.goto(0, 200)
+        turtle.hideturtle()
+        turtle.write("Next Player!", align="center", font=("Ariel", 32, "normal"))
+        time.sleep(3)
+        turtle.undo()
+        turtle.goto(-200, 0)
+        for j in range(1):
+            movement += 120
+        turtle.forward(movement)
+        turtle.pendown()
+        turtle.update()
+    turtle.done()
 
     return(tempNums)
     
 turns = []
 turns = Order(players)
+
+print(players)
+print(turns)
